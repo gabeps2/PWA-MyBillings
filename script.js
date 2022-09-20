@@ -1,9 +1,14 @@
+var isVisible = false;
 
-
-function setInvisible() {
-    document.getElementById("nothingToShow").classList.add("invisible");
+function newBilling() {
+    if (isVisible) {
+        document.getElementsByClassName("newBillingContainer")[0].classList.add("invisible");
+    } else {
+        document.getElementsByClassName("newBillingContainer")[0].classList.remove("invisible");
+    }
+    isVisible = !isVisible
 }
 
-function setVisible() {
-    document.getElementById("nothingToShow").classList.remove("invisible");
+function setInvisible(event) {
+    console.log(event)
 }

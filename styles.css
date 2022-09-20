@@ -86,17 +86,13 @@
   margin-top: 5rem;
 }
 
-.container {
+.billingsContainer {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
   padding: 10px;
-}
-
-.invoicing:first-child {
-  margin-top: -10px;
 }
 
 .invoicing {
@@ -149,11 +145,47 @@
   border-radius: 10px;
 }
 
+.newBillingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: #eeeeee;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.newBillingContainer h2{
+  margin: 10px 10px 0 10px;
+  font-weight: 400;
+}
+
+.newBilling {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.newBilling input {
+  height: 40px;
+  display: flex;
+
+  border: none;
+  border-radius: 10px;
+
+  margin: 10px;
+  padding: 10px;
+}
+
+.newBilling div {
+  margin: 10px;
+}
+
 .invoicingButtons > :first-child {
   margin-right: 5px;
   background-color: #41c900;
 }
 
-.invisible{
+.invisible {
   display: none;
 }
