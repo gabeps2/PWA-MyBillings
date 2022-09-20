@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minhas contas</title>
+    <link href="./styles.css" rel="stylesheet" type="text/css" />
+  </head>
+  <script src="./script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <body>
+    <header>
+      <h1 class="header">Minhas contas</h1>
+    </header>
+    <div class="actions">
+      <button id="sortButton" onclick={setInvisible()}>
+        <img src="./res/order-icon.svg" alt="Order icon" />
+        Data de vencimento
+      </button>
+      <button id="plusButton" onclick={setVisible()}>
+        <img src="./res/plus-icon.svg" alt="Plus icon" />
+      </button>
+    </div>
+    <div id="nothingToShow" class="nothingToShow">
+      <img src="./res/nothing-to-show.svg" alt="Nothing to show" />
+    </div>
+    <div class="container">
+      <div class="invoicing">
+        <div class="invoicingInfo">
+          <h2>Energia</h2>
+          <div>
+            <h3>R$ 55,90</h3>
+            <h3>19/10/2022</h3>
+          </div>
+        </div>
+        <div class="invoicingButtons">
+          <button>
+            <img src="./res/finish-icon.svg" alt="Finish icon" />
+          </button>
+          <button>
+            <img src="./res/cancel-icon.svg" alt="Cancel icon" />
+          </button>
+        </div>
+      </div>
+
+      <div class="invoicing">
+        <div class="invoicingInfo">
+          <h2>Energia</h2>
+          <div>
+            <h3>R$ 55,90</h3>
+            <h3>19/10/2022</h3>
+          </div>
+        </div>
+        <div class="invoicingButtons">
+          <button>
+            <img src="./res/finish-icon.svg" alt="Finish icon" />
+          </button>
+          <button>
+            <img src="./res/cancel-icon.svg" alt="Cancel icon" />
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
