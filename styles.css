@@ -53,10 +53,6 @@
   border-radius: 10px;
 }
 
-.actions :hover {
-  border: 1px solid #3d424a;
-}
-
 #plusButton {
   background-color: #57bee6;
 
@@ -183,10 +179,9 @@
 
   border: none;
   border-radius: 10px;
+  text-align: center;
 
   margin: 10px;
-  padding: 10px;
-
   background-color: #f5f5f5;
 }
 
