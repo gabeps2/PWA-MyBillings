@@ -169,8 +169,8 @@
 
 .newBilling {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
 .newBilling input {
@@ -179,9 +179,9 @@
 
   border: none;
   border-radius: 10px;
-  text-align: center;
 
   margin: 10px;
+  padding: 10px;
   background-color: #f5f5f5;
 }
 
