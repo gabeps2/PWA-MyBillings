@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minhas contas</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+     <link rel="icon" href="/res/icons/icon-48x48.png" />
+     <link rel="manifest" href="manifest.webmanifest"/>
   </head>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,70 +17,36 @@
       <h1 class="header">Minhas contas</h1>
     </header>
     <div class="actions">
-      <button id="sortButton">
+      <button id="sortButton" onclick={orderBillings()}>
         <img src="./res/order-icon.svg" alt="Order icon" />
-        Data de vencimento
+        <p>Data de vencimento</p> 
       </button>
-      <button id="plusButton" onclick={newBilling()}>
+      <button id="plusButton" onclick={toggleNewBilling()}>
         <img src="./res/plus-icon.svg" alt="Plus icon" />
       </button>
     </div>
     <div class="newBillingContainer">
       <h2>Nova conta</h2>
       <div class="newBilling">
-        <input placeholder="Nome"></input>
-        <input placeholder="Valor"></input>
-        <input placeholder="Data de vencimento"></input>
+        <input id="billingName" placeholder="Nome"></input>
+        <input id="billingValue" placeholder="Valor" type="number"></input>
+        <input id="billingDate" placeholder="Data de vencimento" type="text" onfocus="(this.type='date')"></input>
         <div class="invoicingButtons">
-          <button>
+          <button id="confirmNewBilling" onclick={addNewBilling(event)}>
             <img src="./res/finish-icon.svg" alt="Finish icon" />
           </button>
-          <button>
-            <img src="./res/cancel-icon.svg" alt="Cancel icon" onclick={setInvisible(event)}/>
+          <button id="cancelNewBilling" onclick={toggleNewBilling()}>
+            <img src="./res/cancel-icon.svg" alt="Cancel icon"/>
           </button>
         </div>
       </div>
     </div>
-    <div id="nothingToShow" class="nothingToShow invisible">
+    <div id="nothingToShow" class="nothingToShow">
       <img src="./res/nothing-to-show.svg" alt="Nothing to show" />
+      <p>Nenhuma conta</p>
     </div>
-    <div class="billingsContainer">
-      <div class="invoicing">
-        <div class="invoicingInfo">
-          <h2>Energia</h2>
-          <div>
-            <h3>R$ 55,90</h3>
-            <h3>19/10/2022</h3>
-          </div>
-        </div>
-        <div class="invoicingButtons">
-          <button>
-            <img src="./res/finish-icon.svg" alt="Finish icon" />
-          </button>
-          <button>
-            <img src="./res/cancel-icon.svg" alt="Cancel icon" />
-          </button>
-        </div>
-      </div>
-
-      <div class="invoicing">
-        <div class="invoicingInfo">
-          <h2>Energia</h2>
-          <div>
-            <h3>R$ 55,90</h3>
-            <h3>19/10/2022</h3>
-          </div>
-        </div>
-        <div class="invoicingButtons">
-          <button>
-            <img src="./res/finish-icon.svg" alt="Finish icon" />
-          </button>
-          <button>
-            <img src="./res/cancel-icon.svg" alt="Cancel icon" />
-          </button>
-        </div>
-      </div>
-    </div>
+    <ul class="billingsContainer">
+    </ul>
   </body>
   <script src="script.js"></script>
 </html>
