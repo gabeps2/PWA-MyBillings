@@ -5,7 +5,7 @@ A aplicação foi projetada como um gerenciador de contas a pagar, nela é poss�
 #####  Descrição de cada página ou tela, explicando as operações específicas a serem realizadas nela. Acrescente algumas imagens dessas interfaces.
 
 <div style="width: 100%; display: flex; align-items: center; justify-content: center;">  
-<img src="https://github.com/gabeps2/Projeto-1---Aplica-o-web-progressiva/blob/master/app/preview/minhas-contas%20(1).jpg?raw=true" width="270" height="480">  
+<img src="https://raw.githubusercontent.com/gabeps2/Projeto-1---Aplica-o-web-progressiva/master/preview/minhas-contas%20(1).jpg" width="270" height="480">  
 </div>  
 
 ##### Explicação dos dados (da lista) que sua aplicação armazena.
