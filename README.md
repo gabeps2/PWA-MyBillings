@@ -16,8 +16,6 @@ A aplicação é baseada em somente uma tela, onde é possível marcar como paga
 ##### Explicação dos dados (da lista) que sua aplicação armazena.
 Representa uma conta, contém o nome, valor e data de vencimento. Cada item da lista também possui dois botões, um verde para marcar a conta como paga que aplica o efeito 'taxado' nos textos do item, e também um ícone vermelho que exclui o item da lista.
 
-> ##### Resposta (sim ou não) às seguintes questões, que você pode copiar para seu documento readme.md:
-.
 >A aplicação é original e não uma cópia da aplicação de um colega ou de uma aplicação já existente?
 Sim
 
