@@ -1,4 +1,4 @@
-## Minhas contas - Gabriel Pereira Silva
+## PWA - Minhas contas - Gabriel Pereira Silva
 #### Descrição de um parágrafo explicando o que a aplicação faz.
 A aplicação foi projetada como um gerenciador de contas a pagar, nela é possível visualizar, adicionar, editar, marcar como paga, excluir suas contas.
 
