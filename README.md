@@ -4,6 +4,8 @@ A aplicação foi projetada como um gerenciador de contas a pagar, nela é poss�
 
 #####  Descrição de cada página ou tela, explicando as operações específicas a serem realizadas nela. Acrescente algumas imagens dessas interfaces.
 
+A aplicação é baseada em somente uma tela, onde é possível marcar como paga, visualizar, adicionar, editar e excluir contas. Também é possível ordena-lás pelo valor ou pela data de vencimento.
+
 <div style="width: 100%; display: flex; align-items: center; justify-content: center;">  
 <img src="https://raw.githubusercontent.com/gabeps2/Projeto-1---Aplica-o-web-progressiva/master/preview/minhas-contas%20(1).jpg" width="270" height="540">
 <img src="https://raw.githubusercontent.com/gabeps2/Projeto-1---Aplica-o-web-progressiva/master/preview/minhas-contas%20(2).jpg" width="270" height="540">
@@ -12,8 +14,7 @@ A aplicação foi projetada como um gerenciador de contas a pagar, nela é poss�
 </div>  
 
 ##### Explicação dos dados (da lista) que sua aplicação armazena.
-Representa uma conta, contém o nome, valor e data de vencimento.
-
+Representa uma conta, contém o nome, valor e data de vencimento. Cada item da lista também possui dois botões, um verde para marcar a conta como paga que aplica o efeito 'taxado' nos textos do item, e também um ícone vermelho que exclui o item da lista.
 
 > ##### Resposta (sim ou não) às seguintes questões, que você pode copiar para seu documento readme.md:
 .
