@@ -2,29 +2,31 @@ const LANGUAGE = "pt-BR";
 const CURRENCY = "currency";
 const BRL = "BRL";
 const EMPTY_STRING = "";
+const CACHE_KEY = "minhascontas-billings";
 
 var newBillingIsVisible = false;
 var billings = [];
 
 function toggleNewBilling() {
+  var container = document.getElementsByClassName("newBillingContainer")[0];
+  document.getElementById("newBillingTitle").textContent = "Nova conta";
+
   if (newBillingIsVisible) {
-    document.getElementsByClassName("newBillingContainer")[0].classList.add("invisible");
+    container.classList.add("invisible");
   } else {
-    document.getElementsByClassName("newBillingContainer")[0].classList.remove("invisible");
+    container.classList.remove("invisible");
   }
   newBillingIsVisible = !newBillingIsVisible;
 }
 
 function addNewBilling(event) {
-  event.preventDefault();
-
   inputName = document.getElementById("billingName");
   inputValue = document.getElementById("billingValue");
   inputDate = document.getElementById("billingDate");
 
   var data = {
     name: inputName.value,
-    value: inputValue.value,
+    value: parseFloat(inputValue.value),
     date: inputDate.value,
     id: uuidv4(),
   };
@@ -36,11 +38,9 @@ function addNewBilling(event) {
 
     billings.push(data);
 
-    console.log(billings);
-
-    updateView();
     toggleNewBilling();
     toggleBackground();
+    updateView();
   }
 }
 
@@ -50,15 +50,31 @@ function removeBilling(id) {
   updateView();
 }
 
-function updateView() {
-  var container = document.getElementsByClassName("billingsContainer")[0];
+function editBilling(id) {
+  var billing = billings.find((b) => b.id == id);
 
+  var container = document.getElementsByClassName("newBillingContainer")[0];
+  container.classList.remove("invisible");
+  document.getElementById("newBillingTitle").textContent = "Editar conta";
+  newBillingIsVisible = false;
+
+  document.getElementById("billingName").value = billing.name;
+  document.getElementById("billingValue").value = billing.value;
+  document.getElementById("billingDate").value = billing.date;
+
+  removeBilling(id);
+}
+
+function updateView() {
+  setCache();
+
+  var container = document.getElementsByClassName("billingsContainer")[0];
   container.innerHTML = "";
 
   billings.map((billing) => {
     var newBilling = `
     <li class="invoicing" id="${billing.id}">
-        <div class="invoicingInfo">
+        <div class="invoicingInfo" onclick={editBilling("${billing.id}")}>
           <h2>${billing.name}</h2>
           <div>
             <h3>${formatAsCurrency(billing.value)}</h3>
@@ -76,6 +92,7 @@ function updateView() {
       </li>
       `;
     container.innerHTML += newBilling;
+    toggleBackground();
   });
 }
 
@@ -121,17 +138,19 @@ function byValue(a, b) {
 }
 
 function byDate(a, b) {
-  if (a.date < b.date) {
+  if (Date.parse(a.date) < Date.parse(b.date)) {
     return -1;
   }
-  if (a.date > b.date) {
+  if (Date.parse(a.date) < Date.parse(b.date)) {
     return 1;
   }
   return 0;
 }
 
 function formatAsDate(date) {
-  return new Intl.DateTimeFormat(LANGUAGE).format(new Date(date));
+  var result = new Date(date);
+  result.setDate(result.getDate() + 1);
+  return result.toLocaleDateString();
 }
 
 function uuidv4() {
@@ -149,3 +168,19 @@ function toggleBackground() {
     backgroundImg.classList.add("invisible");
   }
 }
+
+function getCache() {
+  var cache = JSON.parse(localStorage.getItem(CACHE_KEY));
+  console.log(cache);
+
+  if (cache != null) {
+    billings = cache;
+    updateView();
+  }
+}
+
+function setCache() {
+  localStorage.setItem(CACHE_KEY, JSON.stringify(billings));
+}
+
+//navigator.serviceWorker.register("./minhascontas-sw.js");

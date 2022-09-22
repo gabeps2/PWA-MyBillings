@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
-  <body>
+  <<body onload="getCache()">
     <header>
       <h1 class="header">Minhas contas</h1>
     </header>
@@ -26,9 +26,9 @@
       </button>
     </div>
     <div class="newBillingContainer">
-      <h2>Nova conta</h2>
-      <div class="newBilling">
-        <input id="billingName" placeholder="Nome"></input>
+      <h2 id="newBillingTitle">Nova conta</h2>
+      <div class="newBilling" id="newBilling">
+        <input id="billingName" placeholder="Nome" type="text"></input>
         <input id="billingValue" placeholder="Valor" type="number"></input>
         <input id="billingDate" placeholder="Data de vencimento" type="text" onfocus="(this.type='date')"></input>
         <div class="invoicingButtons">
